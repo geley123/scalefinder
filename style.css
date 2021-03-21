@@ -1,0 +1,569 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: #ebebeb;
+  font-family: "Lato";
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+h1 {
+  text-align: center;
+  color: #2662bb;
+  margin-top: 2rem;
+  font-size: 3.5rem;
+}
+
+h1 span {
+  color: #1f286c;
+  font-style: italic;
+}
+
+.fretboard {
+  margin: 0.5rem;
+  background-color: #fff;
+  padding: 1em;
+  border-radius: 0.5em;
+  background: #efefef;
+  -webkit-box-shadow: 5px 5px 5px #bababa, -5px -5px 5px #ffffff;
+          box-shadow: 5px 5px 5px #bababa, -5px -5px 5px #ffffff;
+}
+
+.string {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.string:first-of-type {
+  border-top: 1px solid #eee;
+}
+
+.string:last-of-type {
+  border-bottom: 1px solid #eee;
+}
+
+.note {
+  width: 70px;
+  height: 40px;
+  background: transparent;
+  border-right: 1px solid #aaa;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.note__open {
+  border-right: 4px solid #999;
+}
+
+.note__marker {
+  color: #fff;
+  background-color: #2662bb;
+  border-radius: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  font-size: 0.8rem;
+  position: absolute;
+  z-index: 100;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.note::after {
+  content: " ";
+  width: 100%;
+  height: 1px;
+  background-color: #aaa;
+}
+
+.fret-number {
+  width: 70px;
+  height: 20px;
+  margin-top: 10px;
+  background: transparent;
+  border-right: 1px solid #aaa;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 0.8rem;
+  color: #999;
+}
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.radio-buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  background-color: #fff;
+  padding: 0.5rem;
+  border-radius: 5px;
+  width: 942px;
+  background: #efefef;
+  -webkit-box-shadow: 5px 5px 5px #bababa, -5px -5px 5px #ffffff;
+          box-shadow: 5px 5px 5px #bababa, -5px -5px 5px #ffffff;
+}
+
+.radio-buttons input[type="radio"] {
+  opacity: 0;
+  position: fixed;
+  width: 0;
+}
+
+.radio-buttons label {
+  display: inline-block;
+  padding: 12px 15px;
+  font-size: 16px;
+  font-family: sans-serif;
+  font-weight: 700;
+  color: #444;
+  border: 1px solid #aaa;
+  border-left: 1px solid #fff;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#e5e5e5));
+  background: linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%);
+  margin: 0;
+}
+
+.radio-buttons label:first-of-type {
+  border-left: 1px solid #aaa;
+  border-radius: 0.5em 0 0 0.5em;
+}
+
+.radio-buttons label:last-of-type {
+  border-radius: 0 0.5em 0.5em 0;
+  margin-right: 1em;
+}
+
+.radio-buttons input[type="radio"]:checked + label {
+  background-color: #1f286c;
+  background: -webkit-gradient(linear, left top, left bottom, from(#1f286c), to(#2662bb));
+  background: linear-gradient(to bottom, #1f286c, #2662bb);
+  color: #fff;
+}
+
+.mobile-root-modal input[type="radio"]:checked + label {
+  background-color: #1f286c;
+  background: -webkit-gradient(linear, left top, left bottom, from(#1f286c), to(#2662bb));
+  background: linear-gradient(to bottom, #1f286c, #2662bb);
+  color: #fff;
+}
+
+/* class applies to select element itself, not a wrapper element */
+.select-css {
+  display: block;
+  font-size: 16px;
+  font-family: sans-serif;
+  font-weight: 700;
+  color: #444;
+  line-height: 1.3;
+  padding: 0.6em 1.4em 0.5em 0.8em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  margin-left: 6rem;
+  border: 1px solid #aaa;
+  -webkit-box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
+          box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
+  border-radius: 0.5em;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #fff;
+  /* note: bg image below uses 2 urls. The first is an svg data uri for the arrow icon, and the second is the gradient. 
+    for the icon, if you want to change the color, be sure to use `%23` instead of `#`, since it's a url. You can also swap in a different svg icon or an external image reference
+    
+  */
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E"), -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#e5e5e5));
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E"), linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%);
+  background-repeat: no-repeat, repeat;
+  /* arrow icon position (1em from the right, 50% vertical) , then gradient position*/
+  background-position: right 0.7em top 50%, 0 0;
+  /* icon size, then gradient */
+  background-size: 0.65em auto, 100%;
+}
+
+@media only screen and (max-width: 850px) {
+  .select-css {
+    margin-left: 0;
+  }
+}
+
+/* Hide arrow icon in IE browsers */
+.select-css::-ms-expand {
+  display: none;
+}
+
+/* Hover style */
+.select-css:hover {
+  border-color: #888;
+}
+
+/* Focus style */
+.select-css:focus {
+  border-color: #aaa;
+  /* It'd be nice to use -webkit-focus-ring-color here but it doesn't work on box-shadow */
+  -webkit-box-shadow: 0 0 1px 3px rgba(59, 153, 252, 0.7);
+          box-shadow: 0 0 1px 3px rgba(59, 153, 252, 0.7);
+  box-shadow: 0 0 0 3px -moz-mac-focusring;
+  color: #222;
+  outline: none;
+}
+
+/* Set options to normal weight */
+.select-css option {
+  font-weight: normal;
+}
+
+/* Support for rtl text, explicit support for Arabic and Hebrew */
+*[dir="rtl"] .select-css,
+:root:lang(ar) .select-css,
+:root:lang(iw) .select-css {
+  background-position: left 0.7em top 50%, 0 0;
+  padding: 0.6em 0.8em 0.5em 1.4em;
+}
+
+/* Disabled styles */
+.select-css:disabled,
+.select-css[aria-disabled="true"] {
+  color: graytext;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22graytext%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E"), -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#e5e5e5));
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22graytext%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E"), linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%);
+}
+
+.select-css:disabled:hover,
+.select-css[aria-disabled="true"] {
+  border-color: #aaa;
+}
+
+.info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  width: 942px;
+  margin-top: 1rem;
+}
+
+.info__key {
+  color: #2662bb;
+  font-size: 3rem;
+  font-weight: 800;
+  margin-left: 2rem;
+  margin-right: 0.5rem;
+}
+
+.info__scale {
+  color: #2662bb;
+  margin-right: 2rem;
+  font-size: 1.5rem;
+}
+
+.info__steps {
+  color: #999;
+  font-size: 1.2rem;
+}
+
+@media only screen and (max-width: 850px) {
+  .desktop {
+    display: none;
+  }
+}
+
+.mobile {
+  width: 100vw;
+}
+
+@media only screen and (min-width: 850px) {
+  .mobile {
+    display: none;
+  }
+}
+
+.mobile__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.mobile__header__h1 {
+  font-size: 1.2rem;
+  text-align: left;
+  color: #2662bb;
+  margin-top: 0rem;
+  margin-left: 0.5rem;
+}
+
+.mobile__header__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
+
+.mobile__header__info__key {
+  color: #2662bb;
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+  font-weight: 700;
+}
+
+.mobile__header__info__scale {
+  color: #2662bb;
+  font-size: 1rem;
+  margin-right: 0.5rem;
+}
+
+.mobile__fretboard {
+  width: 99vw;
+  height: 90vh;
+  margin: 0.2rem;
+  background-color: #fff;
+  padding: 1em;
+  border-radius: 0.5em;
+  background: #efefef;
+  -webkit-box-shadow: 5px 5px 5px #bababa, -5px -5px 5px #ffffff;
+          box-shadow: 5px 5px 5px #bababa, -5px -5px 5px #ffffff;
+}
+
+.mobile__string {
+  width: 100%;
+  height: 12%;
+  max-height: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.mobile__string:first-of-type {
+  border-top: 1px solid #eee;
+}
+
+.mobile__string:last-of-type {
+  border-bottom: 1px solid #eee;
+}
+
+.mobile__note {
+  width: 8%;
+  background: transparent;
+  border-right: 1px solid #aaa;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.mobile__note__marker {
+  color: #fff;
+  background-color: #2662bb;
+  border-radius: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  font-size: 0.8rem;
+  position: absolute;
+  z-index: 100;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+
+.mobile__note::after {
+  content: " ";
+  width: 100%;
+  height: 1px;
+  background-color: #aaa;
+}
+
+.button {
+  background: #2662bb;
+  color: #fff;
+  font-size: 1rem;
+  position: absolute;
+  border-radius: 15%;
+  padding: 0.5rem 0.6rem;
+  padding-bottom: 0.7rem;
+  bottom: 1rem;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.mobile__root-button {
+  left: 2rem;
+}
+
+.mobile__scale-button {
+  right: 2rem;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 80vw;
+  background-color: #f3f3f3;
+  padding: 5rem 2rem;
+  -webkit-box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.3);
+          box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+  z-index: 100;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.close-modal {
+  position: absolute;
+  top: 1.2rem;
+  right: 2rem;
+  font-size: 3rem;
+  color: #2662bb;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.mobile__radio-buttons input[type="radio"] {
+  opacity: 0;
+  position: fixed;
+  width: 0;
+}
+
+.mobile__radio-buttons label {
+  display: inline-block;
+  padding: 12px 15px;
+  font-size: 1.2rem;
+  font-family: sans-serif;
+  font-weight: 700;
+  color: #444;
+  border-radius: 0.5em;
+  border: 1px solid #aaa;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#e5e5e5));
+  background: linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%);
+  margin: 0.2rem;
+}
+
+.root-note {
+  background: -webkit-gradient(linear, left top, left bottom, from(#2662bb), to(#1f286c));
+  background: linear-gradient(to bottom, #2662bb, #1f286c);
+}
+
+.root-note::before {
+  position: absolute;
+  left: -2px;
+  top: -2px;
+  content: "";
+  width: 1.65rem;
+  height: 1.65rem;
+  background-color: transparent;
+  border: 1px solid #1f286c;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.major-charateristic {
+  background-color: #4f1db3;
+}
+
+.minor-charateristic {
+  background-color: #1d7c29;
+}
+/*# sourceMappingURL=style.css.map */

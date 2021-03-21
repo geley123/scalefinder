@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="format-detection" content="telephone=no" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-176278251-1"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "UA-176278251-1");
+    </script>
+    <title>Guitar scales</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <div class="desktop">
+      <h1>Scale<span>Finder</span></h1>
+      <div class="radio-buttons">
+        <input type="radio" id="C" name="rootNote" value="C" />
+        <label for="C">C</label>
+        <input type="radio" id="C#" name="rootNote" value="Csharp" />
+        <label for="C#">Db</label>
+        <input type="radio" id="D" name="rootNote" value="D" />
+        <label for="D">D</label>
+        <input type="radio" id="D#" name="rootNote" value="Dsharp" />
+        <label for="D#">Eb</label>
+        <input type="radio" id="E" name="rootNote" value="E" />
+        <label for="E">E</label>
+        <input type="radio" id="F" name="rootNote" value="F" />
+        <label for="F">F</label>
+        <input type="radio" id="F#" name="rootNote" value="Fsharp" />
+        <label for="F#">Gb</label>
+        <input type="radio" id="G" name="rootNote" value="G" />
+        <label for="G">G</label>
+        <input type="radio" id="G#" name="rootNote" value="Gsharp" />
+        <label for="G#">Ab</label>
+        <input type="radio" id="A" name="rootNote" value="A" />
+        <label for="A">A</label>
+        <input type="radio" id="A#" name="rootNote" value="Asharp" />
+        <label for="A#">Bb</label>
+        <input type="radio" id="B" name="rootNote" value="B" />
+        <label for="B">B</label>
+
+        <select name="scales" id="scales-select" class="select-css">
+          <option value="0">Ionian (Major)</option>
+          <option value="1">Dorian</option>
+          <option value="2">Phrygian</option>
+          <option value="3">Lydian</option>
+          <option value="4">Mixolydian</option>
+          <option value="5">Aeolian (Natural Minor)</option>
+          <option value="6">Locrian</option>
+          <option value="7">Harmonic Minor</option>
+          <option value="8">Minor Pentatonic</option>
+          <option value="9">Major Pentatonic</option>
+          <option value="10">Blues Scale</option>
+        </select>
+      </div>
+      <div></div>
+      <div class="fretboard">
+        <div class="string string__1">
+          <div class="note note__open">
+            <div class="note__marker" data-note="E">E</div>
+          </div>
+          <div class="note">
+            <div class="note__marker" data-note="F">F</div>
+          </div>
+          <div class="note">
+            <div class="note__marker" data-note="Fsharp">F#</div>
+          </div>
+          <div class="note">
+            <div class="note__marker" data-note="G">G</div>
+          </div>
+          <div class="note">
+            <div class="note__marker" data-note="Gsharp">G#</div>
+          </div>
+          <div class="note">
+            <div class="note__marker" data-note="A">A</div>
+          </div>
+          <div class="note">
+            <div class="note__marker" data-note="Asharp">A#</div>
+          </div>
+          <div class="note">
+            <div class="note__marker" data-note="B">B</div>
+          </div>
+          <div class="note">
+            <div class="note__marker" data-note="C">C</div>
+          </div>
+          <div class="note">
+            <div class="note__marker" data-note="Csharp">C#</div>
+          </div>
+          <div class="note">
+            <div class="note__marker" data-note="D">D</div>
+          </div>
+          <div class="note">
+            <div class="note__marker" data-note="Dsharp">D#</div>
+          </div>
+          <div class="note">
+            <div class="note__marker" data-note="E">E</div>
+          </div>
+        </div>
+        <div class="string string__2">
+          <div class="note note__open">
+            <div class="note__marker" data-note="B">B</div>
+          </div>
+          <div class="note">
+            <div class="note__marker" data-note="C">C</div>
+          </div>
+          <div class="note">
+            <div class="note__marker" data-note="Csharp">C#</div>
+          </div>
+          <div class="note">
+            <div class="note__marker" data-note="D">D</div>
+          </div>
+          <div class="note">
+            <div class="note__marker" data-note="Dsharp">D#</div>
+          </div>
+          <div class="note">
+            <div class="note__marker" data-note="E">E</div>
+          </div>
+          <div class="note">
+            <div class="note__marker" data-note="F">F</div>
+          </div>
+          <div class="note">
+            <div class="note__marker" data-note="Fsharp">F#</div>
+          </div>
+          <div class="note">
+            <div class="note__marker" data-note="G">G</div>
+          </div>
+          <div class="note">
+            <div class="note__marker" data-note="Gsharp">G#</div>
+          </div>
+          <div class="note">
+            <div class="note__marker" data-note="A">A</div>
+          </div>
+          <div class="note">
+            <div class="note__marker" data-note="Asharp">A#</div>
+          </div>
+          <div class="note">
+            <div class="note__marker" data-note="B">B</div>
+          </div>
+        </div>
+        <div class="string string__3">
+          <div class="note note__open">
+            <div class="note__marker" data-note="G">G</div>
+          </div>
+          <div class="note">
+            <div class="note__marker" data-note="Gsharp">G#</div>
+          </div>
+          <div class="note">
+            <div class="note__marker" data-note="A">A</div>
+          </div>
+          <div class="note">
+            <div class="note__marker" data-note="Asharp">A#</div>
+          </div>
+          <div class="note">
+            <div class="note__marker" data-note="B">B</div>
+          </div>
+          <div class="note">
+            <div class="note__marker" data-note="C">C</div>
+          </div>
+          <div class="note">
+            <div class="note__marker" data-note="Csharp">C#</div>
+          </div>
+          <div class="note">
+            <div class="note__marker" data-note="D">D</div>
+          </div>
+          <div class="note">
+            <div class="note__marker" data-note="Dsharp">D#</div>
+          </div>
+          <div class="note">
+            <div class="note__marker" data-note="E">E</div>
+          </div>
+          <div class="note">
+            <div class="note__marker" data-note="F">F</div>
+          </div>
+          <div class="note">
+            <div class="note__marker" data-note="Fsharp">F#</div>
+          </div>
+          <div class="note">
+            <div class="note__marker" data-note="G">G</div>
+          </div>
+        </div>
+        <div class="string string__4">
+          <div class="note note__open">
+            <div class="note__marker" data-note="D">D</div>
+          </div>
+          <div class="note">
+            <div class="note__marker" data-note="Dsharp">D#</div>
+          </div>
+          <div class="note">
+            <div class="note__marker" data-note="E">E</div>
+          </div>
+          <div class="note">
+            <div class="note__marker" data-note="F">F</div>
+          </div>
+          <div class="note">
+            <div class="note__marker" data-note="Fsharp">F#</div>
+          </div>
+          <div class="note">
+            <div class="note__marker" data-note="G">G</div>
+          </div>
+          <div class="note">
+            <div class="note__marker" data-note="Gsharp">G#</div>
+          </div>
+          <div class="note">
+            <div class="note__marker" data-note="A">A</div>
+          </div>
+          <div class="note">
+            <div class="note__marker" data-note="Asharp">A#</div>
+          </div>
+          <div class="note">
+            <div class="note__marker" data-note="B">B</div>
+          </div>
+          <div class="note">
+            <div class="note__marker" data-note="C">C</div>
+          </div>
+          <div class="note">
+            <div class="note__marker" data-note="Csharp">C#</div>
+          </div>
+          <div class="note">
+            <div class="note__marker" data-note="D">D</div>
+          </div>
+        </div>
+        <div class="string string__5">
+          <div class="note note__open">
+            <div class="note__marker" data-note="A">A</div>
+          </div>
+          <div class="note">
+            <div class="note__marker" data-note="Asharp">A#</div>
+          </div>
+          <div class="note">
+            <div class="note__marker" data-note="B">B</div>
+          </div>
+          <div class="note">
+            <div class="note__marker" data-note="C">C</div>
+          </div>
+          <div class="note">
+            <div class="note__marker" data-note="Csharp">C#</div>
+          </div>
+          <div class="note">
+            <div class="note__marker" data-note="D">D</div>
+          </div>
+          <div class="note">
+            <div class="note__marker" data-note="Dsharp">D#</div>
+          </div>
+          <div class="note">
+            <div class="note__marker" data-note="E">E</div>
+          </div>
+          <div class="note">
+            <div class="note__marker" data-note="F">F</div>
+          </div>
+          <div class="note">
+            <div class="note__marker" data-note="Fsharp">F#</div>
+          </div>
+          <div class="note">
+            <div class="note__marker" data-note="G">G</div>
+          </div>
+          <div class="note">
+            <div class="note__marker" data-note="Gsharp">G#</div>
+          </div>
+          <div class="note">
+            <div class="note__marker" data-note="A">A</div>
+          </div>
+        </div>
+        <div class="string string__6">
+          <div class="note note__open">
+            <div class="note__marker" data-note="E">E</div>
+          </div>
+          <div class="note">
+            <div class="note__marker" data-note="F">F</div>
+          </div>
+          <div class="note">
+            <div class="note__marker" data-note="Fsharp">F#</div>
+          </div>
+          <div class="note">
+            <div class="note__marker" data-note="G">G</div>
+          </div>
+          <div class="note">
+            <div class="note__marker" data-note="Gsharp">G#</div>
+          </div>
+          <div class="note">
+            <div class="note__marker" data-note="A">A</div>
+          </div>
+
+          <div class="note">
+            <div class="note__marker" data-note="Asharp">A#</div>
+          </div>
+          <div class="note">
+            <div class="note__marker" data-note="B">B</div>
+          </div>
+          <div class="note">
+            <div class="note__marker" data-note="C">C</div>
+          </div>
+          <div class="note">
+            <div class="note__marker" data-note="Csharp">C#</div>
+          </div>
+          <div class="note">
+            <div class="note__marker" data-note="D">D</div>
+          </div>
+          <div class="note">
+            <div class="note__marker" data-note="Dsharp">D#</div>
+          </div>
+          <div class="note">
+            <div class="note__marker" data-note="E">E</div>
+          </div>
+        </div>
+        <div class="string">
+          <div class="fret-number">Open</div>
+          <div class="fret-number">1</div>
+          <div class="fret-number">2</div>
+          <div class="fret-number">3</div>
+          <div class="fret-number">4</div>
+          <div class="fret-number">5</div>
+          <div class="fret-number">6</div>
+          <div class="fret-number">7</div>
+          <div class="fret-number">8</div>
+          <div class="fret-number">9</div>
+          <div class="fret-number">10</div>
+          <div class="fret-number">11</div>
+          <div class="fret-number">12</div>
+        </div>
+      </div>
+      <div class="info">
+        <div class="info__key"></div>
+        <div class="info__scale"></div>
+        <div class="info__steps hidden">
+          Steps: <span class="info__steps__steps"></span>
+        </div>
+      </div>
+    </div>
+
+    <!--start mobile -->
+    <div class="mobile">
+      <div class="mobile__header">
+        <div class="mobile__header__title">
+          <h1 class="mobile__header__h1">Scale<span>Finder</span></h1>
+        </div>
+        <div class="mobile__header__info">
+          <div class="mobile__header__info__key"></div>
+          <div class="mobile__header__info__scale"></div>
+        </div>
+      </div>
+
+      <!--fretboard-->
+      <div class="mobile__fretboard">
+        <div class="mobile__string string__1">
+          <div class="mobile__note note__open">
+            <div class="mobile__note__marker" data-note="E">E</div>
+          </div>
+          <div class="mobile__note">
+            <div class="mobile__note__marker" data-note="F">F</div>
+          </div>
+          <div class="mobile__note">
+            <div class="mobile__note__marker" data-note="Fsharp">F#</div>
+          </div>
+          <div class="mobile__note">
+            <div class="mobile__note__marker" data-note="G">G</div>
+          </div>
+          <div class="mobile__note">
+            <div class="mobile__note__marker" data-note="Gsharp">G#</div>
+          </div>
+          <div class="mobile__note">
+            <div class="mobile__note__marker" data-note="A">A</div>
+          </div>
+          <div class="mobile__note">
+            <div class="mobile__note__marker" data-note="Asharp">A#</div>
+          </div>
+          <div class="mobile__note">
+            <div class="mobile__note__marker" data-note="B">B</div>
+          </div>
+          <div class="mobile__note">
+            <div class="mobile__note__marker" data-note="C">C</div>
+          </div>
+          <div class="mobile__note">
+            <div class="mobile__note__marker" data-note="Csharp">C#</div>
+          </div>
+          <div class="mobile__note">
+            <div class="mobile__note__marker" data-note="D">D</div>
+          </div>
+          <div class="mobile__note">
+            <div class="mobile__note__marker" data-note="Dsharp">D#</div>
+          </div>
+          <div class="mobile__note">
+            <div class="mobile__note__marker" data-note="E">E</div>
+          </div>
+        </div>
+        <div class="mobile__string string__2">
+          <div class="mobile__note note__open">
+            <div class="mobile__note__marker" data-note="B">B</div>
+          </div>
+          <div class="mobile__note">
+            <div class="mobile__note__marker" data-note="C">C</div>
+          </div>
+          <div class="mobile__note">
+            <div class="mobile__note__marker" data-note="Csharp">C#</div>
+          </div>
+          <div class="mobile__note">
+            <div class="mobile__note__marker" data-note="D">D</div>
+          </div>
+          <div class="mobile__note">
+            <div class="mobile__note__marker" data-note="Dsharp">D#</div>
+          </div>
+          <div class="mobile__note">
+            <div class="mobile__note__marker" data-note="E">E</div>
+          </div>
+          <div class="mobile__note">
+            <div class="mobile__note__marker" data-note="F">F</div>
+          </div>
+          <div class="mobile__note">
+            <div class="mobile__note__marker" data-note="Fsharp">F#</div>
+          </div>
+          <div class="mobile__note">
+            <div class="mobile__note__marker" data-note="G">G</div>
+          </div>
+          <div class="mobile__note">
+            <div class="mobile__note__marker" data-note="Gsharp">G#</div>
+          </div>
+          <div class="mobile__note">
+            <div class="mobile__note__marker" data-note="A">A</div>
+          </div>
+          <div class="mobile__note">
+            <div class="mobile__note__marker" data-note="Asharp">A#</div>
+          </div>
+          <div class="mobile__note">
+            <div class="mobile__note__marker" data-note="B">B</div>
+          </div>
+        </div>
+        <div class="mobile__string string__3">
+          <div class="mobile__note note__open">
+            <div class="mobile__note__marker" data-note="G">G</div>
+          </div>
+          <div class="mobile__note">
+            <div class="mobile__note__marker" data-note="Gsharp">G#</div>
+          </div>
+          <div class="mobile__note">
+            <div class="mobile__note__marker" data-note="A">A</div>
+          </div>
+          <div class="mobile__note">
+            <div class="mobile__note__marker" data-note="Asharp">A#</div>
+          </div>
+          <div class="mobile__note">
+            <div class="mobile__note__marker" data-note="B">B</div>
+          </div>
+          <div class="mobile__note">
+            <div class="mobile__note__marker" data-note="C">C</div>
+          </div>
+          <div class="mobile__note">
+            <div class="mobile__note__marker" data-note="Csharp">C#</div>
+          </div>
+          <div class="mobile__note">
+            <div class="mobile__note__marker" data-note="D">D</div>
+          </div>
+          <div class="mobile__note">
+            <div class="mobile__note__marker" data-note="Dsharp">D#</div>
+          </div>
+          <div class="mobile__note">
+            <div class="mobile__note__marker" data-note="E">E</div>
+          </div>
+          <div class="mobile__note">
+            <div class="mobile__note__marker" data-note="F">F</div>
+          </div>
+          <div class="mobile__note">
+            <div class="mobile__note__marker" data-note="Fsharp">F#</div>
+          </div>
+          <div class="mobile__note">
+            <div class="mobile__note__marker" data-note="G">G</div>
+          </div>
+        </div>
+        <div class="mobile__string string__4">
+          <div class="mobile__note note__open">
+            <div class="mobile__note__marker" data-note="D">D</div>
+          </div>
+          <div class="mobile__note">
+            <div class="mobile__note__marker" data-note="Dsharp">D#</div>
+          </div>
+          <div class="mobile__note">
+            <div class="mobile__note__marker" data-note="E">E</div>
+          </div>
+          <div class="mobile__note">
+            <div class="mobile__note__marker" data-note="F">F</div>
+          </div>
+          <div class="mobile__note">
+            <div class="mobile__note__marker" data-note="Fsharp">F#</div>
+          </div>
+          <div class="mobile__note">
+            <div class="mobile__note__marker" data-note="G">G</div>
+          </div>
+          <div class="mobile__note">
+            <div class="mobile__note__marker" data-note="Gsharp">G#</div>
+          </div>
+          <div class="mobile__note">
+            <div class="mobile__note__marker" data-note="A">A</div>
+          </div>
+          <div class="mobile__note">
+            <div class="mobile__note__marker" data-note="Asharp">A#</div>
+          </div>
+          <div class="mobile__note">
+            <div class="mobile__note__marker" data-note="B">B</div>
+          </div>
+          <div class="mobile__note">
+            <div class="mobile__note__marker" data-note="C">C</div>
+          </div>
+          <div class="mobile__note">
+            <div class="mobile__note__marker" data-note="Csharp">C#</div>
+          </div>
+          <div class="mobile__note">
+            <div class="mobile__note__marker" data-note="D">D</div>
+          </div>
+        </div>
+        <div class="mobile__string string__5">
+          <div class="mobile__note note__open">
+            <div class="mobile__note__marker" data-note="A">A</div>
+          </div>
+          <div class="mobile__note">
+            <div class="mobile__note__marker" data-note="Asharp">A#</div>
+          </div>
+          <div class="mobile__note">
+            <div class="mobile__note__marker" data-note="B">B</div>
+          </div>
+          <div class="mobile__note">
+            <div class="mobile__note__marker" data-note="C">C</div>
+          </div>
+          <div class="mobile__note">
+            <div class="mobile__note__marker" data-note="Csharp">C#</div>
+          </div>
+          <div class="mobile__note">
+            <div class="mobile__note__marker" data-note="D">D</div>
+          </div>
+          <div class="mobile__note">
+            <div class="mobile__note__marker" data-note="Dsharp">D#</div>
+          </div>
+          <div class="mobile__note">
+            <div class="mobile__note__marker" data-note="E">E</div>
+          </div>
+          <div class="mobile__note">
+            <div class="mobile__note__marker" data-note="F">F</div>
+          </div>
+          <div class="mobile__note">
+            <div class="mobile__note__marker" data-note="Fsharp">F#</div>
+          </div>
+          <div class="mobile__note">
+            <div class="mobile__note__marker" data-note="G">G</div>
+          </div>
+          <div class="mobile__note">
+            <div class="mobile__note__marker" data-note="Gsharp">G#</div>
+          </div>
+          <div class="mobile__note">
+            <div class="mobile__note__marker" data-note="A">A</div>
+          </div>
+        </div>
+        <div class="mobile__string string__6">
+          <div class="mobile__note note__open">
+            <div class="mobile__note__marker" data-note="E">E</div>
+          </div>
+          <div class="mobile__note">
+            <div class="mobile__note__marker" data-note="F">F</div>
+          </div>
+          <div class="mobile__note">
+            <div class="mobile__note__marker" data-note="Fsharp">F#</div>
+          </div>
+          <div class="mobile__note">
+            <div class="mobile__note__marker" data-note="G">G</div>
+          </div>
+          <div class="mobile__note">
+            <div class="mobile__note__marker" data-note="Gsharp">G#</div>
+          </div>
+          <div class="mobile__note">
+            <div class="mobile__note__marker" data-note="A">A</div>
+          </div>
+
+          <div class="mobile__note">
+            <div class="mobile__note__marker" data-note="Asharp">A#</div>
+          </div>
+          <div class="mobile__note">
+            <div class="mobile__note__marker" data-note="B">B</div>
+          </div>
+          <div class="mobile__note">
+            <div class="mobile__note__marker" data-note="C">C</div>
+          </div>
+          <div class="mobile__note">
+            <div class="mobile__note__marker" data-note="Csharp">C#</div>
+          </div>
+          <div class="mobile__note">
+            <div class="mobile__note__marker" data-note="D">D</div>
+          </div>
+          <div class="mobile__note">
+            <div class="mobile__note__marker" data-note="Dsharp">D#</div>
+          </div>
+          <div class="mobile__note">
+            <div class="mobile__note__marker" data-note="E">E</div>
+          </div>
+        </div>
+        <div class="mobile__string">
+          <div class="fret-number">0</div>
+          <div class="fret-number">1</div>
+          <div class="fret-number">2</div>
+          <div class="fret-number">3</div>
+          <div class="fret-number">4</div>
+          <div class="fret-number">5</div>
+          <div class="fret-number">6</div>
+          <div class="fret-number">7</div>
+          <div class="fret-number">8</div>
+          <div class="fret-number">9</div>
+          <div class="fret-number">10</div>
+          <div class="fret-number">11</div>
+          <div class="fret-number">12</div>
+        </div>
+      </div>
+      <div class="mobile__root-button button">Root</div>
+      <div class="mobile__scale-button button">Scale</div>
+      <div class="mobile-root-modal modal hidden">
+        <button class="close-modal close-modal-root">&times;</button>
+        <div class="mobile__radio-buttons">
+          <input
+            type="radio"
+            id="Cmobile"
+            name="mobileRootNote"
+            class="mobile-radio"
+            value="C"
+          />
+          <label for="Cmobile">C</label>
+          <input
+            type="radio"
+            id="C#mobile"
+            name="mobileRootNote"
+            class="mobile-radio"
+            value="Csharp"
+          />
+          <label for="C#mobile">Db</label>
+          <input
+            type="radio"
+            id="Dmobile"
+            name="mobileRootNote"
+            class="mobile-radio"
+            value="D"
+          />
+          <label for="Dmobile">D</label>
+          <input
+            type="radio"
+            id="D#mobile"
+            name="mobileRootNote"
+            class="mobile-radio"
+            value="Dsharp"
+          />
+          <label for="D#mobile">Eb</label>
+          <input
+            type="radio"
+            id="Emobile"
+            name="mobileRootNote"
+            class="mobile-radio"
+            value="E"
+          />
+          <label for="Emobile">E</label>
+          <input
+            type="radio"
+            id="Fmobile"
+            name="mobileRootNote"
+            class="mobile-radio"
+            value="F"
+          />
+          <label for="Fmobile">F</label>
+          <input
+            type="radio"
+            id="F#mobile"
+            name="mobileRootNote"
+            class="mobile-radio"
+            value="Fsharp"
+          />
+          <label for="F#mobile">Gb</label>
+          <input
+            type="radio"
+            id="Gmobile"
+            name="mobileRootNote"
+            class="mobile-radio"
+            value="G"
+          />
+          <label for="Gmobile">G</label>
+          <input
+            type="radio"
+            id="G#mobile"
+            name="mobileRootNote"
+            class="mobile-radio"
+            value="Gsharp"
+          />
+          <label for="G#mobile">Ab</label>
+          <input
+            type="radio"
+            id="Amobile"
+            name="mobileRootNote"
+            class="mobile-radio"
+            value="A"
+          />
+          <label for="Amobile">A</label>
+          <input
+            type="radio"
+            id="A#mobile"
+            name="mobileRootNote"
+            class="mobile-radio"
+            value="Asharp"
+          />
+          <label for="A#mobile">Bb</label>
+          <input
+            type="radio"
+            id="Bmobile"
+            name="mobileRootNote"
+            class="mobile-radio"
+            value="B"
+          />
+          <label for="Bmobile">B</label>
+        </div>
+      </div>
+      <div class="mobile-scale-modal modal hidden">
+        <button class="close-modal close-modal-scale">&times;</button>
+        <select
+          name="mobileScales"
+          id="mobile-scales-select"
+          class="select-css"
+        >
+          <option value="0">Ionian (Major)</option>
+          <option value="1">Dorian</option>
+          <option value="2">Phrygian</option>
+          <option value="3">Lydian</option>
+          <option value="4">Mixolydian</option>
+          <option value="5">Aeolian (Natural Minor)</option>
+          <option value="6">Locrian</option>
+          <option value="7">Harmonic Minor</option>
+          <option value="8">Minor Pentatonic</option>
+          <option value="9">Major Pentatonic</option>
+          <option value="10">Blues Scale</option>
+        </select>
+      </div>
+      <div class="overlay hidden"></div>
+    </div>
+  </body>
+</html>
